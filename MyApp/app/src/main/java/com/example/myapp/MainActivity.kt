@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         val name_text: EditText = findViewById(R.id.name_text)
         val age_text: EditText = findViewById(R.id.age_text)
@@ -36,9 +38,15 @@ class MainActivity : AppCompatActivity() {
             else if((height.toInt()  <= 0 || height.toInt() > 250) || (weight.toDouble() <= 0 || weight.toDouble() > 250 ))
                 Toast.makeText(this, "Поля \"Рост\" и \"Вес\" должны быть от 0 до 250" , Toast.LENGTH_LONG).show()
             else
-                result_text.text = "Норма: " + (88.362 + (13.397 * weight.toDouble()) + (4.799 * height.toInt()) - (5.677 * age.toInt())).toInt().toString() + "каллорий"
+                result_text.text = "Норма: " + (88.362 + (13.397 * weight.toDouble()) + (4.799 * height.toInt()) - (5.677 * age.toInt())).toInt().toString() + " каллорий"
 
         }
+
+        fun startNewActivity1(v: View){
+            val intent:Intent = Intent(this,SecondActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
 

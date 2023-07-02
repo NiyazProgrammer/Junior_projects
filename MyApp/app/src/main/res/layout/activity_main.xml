@@ -95,4 +95,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#2D779A"
         app:strokeWidth="3sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="startNewActivity1"
+        android:text="Переход на новую страницу"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
